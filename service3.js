@@ -62,7 +62,10 @@ mongoose
       auth(req.headers.authorization)
         .then(() => {
           User.findById({ _id: req.params.id })
-            .then(data => res.send(data))
+            .then(data => {
+              if (!_) res.status(404).send("Not found");
+              res.send(data);
+            })
             .catch(err => next(err));
         })
         .catch(err => {
