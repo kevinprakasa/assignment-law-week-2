@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 const express = require("express");
 const app = express();
 const User = require("./model.js");
-const port = 3000;
+const port = 20555;
 const auth = require("./auth.js");
 const bodyParser = require("body-parser");
 // koneksi Ke Database
